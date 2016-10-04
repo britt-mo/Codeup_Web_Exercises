@@ -9,22 +9,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <title>Myfirst HTML form</title>
-    <link rel="stylesheet" href="../css/site.css">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 <h2>User Login</h2>
-<form method="POST" action="http://requestb.in/yczpbuyd">
-    <p>
-        <label for="username">Username</label>
-        <input id="username" name="username" type="text" autofocus>
-    </p>
-    <p>
-        <label for="password">Password</label>
-        <input id="password" name="password" type="password">
-    </p>
-    <p>
-        <input type="submit">
-    </p>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Sign in</button>
+        </div>
+    </div>
 </form>
 
 <h2>Compose an Email</h2>
@@ -43,8 +58,8 @@
         <input type="text" id="subject" name="subject" value="">
      </p>
 
-
-        <textarea id="email_body" name="email_body" rows="5" cols="40">Compose Message Here</textarea>
+    <p>
+        <textarea class="form-control" rows="3"></textarea>
     </p>
     <p>
         <button type="submit">Send Email</button>
@@ -59,7 +74,7 @@
 
 <p>What is the state bird of California?</p>
 <p>
-<label></label>
+<label>
     <input type="radio" name="q2" value="Cardinal">
     Cardinal
 
@@ -90,10 +105,12 @@
 <p>
 <form method="POST" action="http://requestb.in/z91lloz9">
     <label for="os">What foods are not vegan?</label>
-    <select id="os" name="os[]" multiple>
-        <option value="linux">Eggs</option>
-        <option value="osx">Honey</option>
-        <option value="windows">Almonds</option>
+    <select multiple class="form-control">
+        <option>Eggs</option>
+        <option>Avocado</option>
+        <option>Honey</option>
+        <option>Oreos</option>
+        <option>Marshmellows</option>
     </select>
 </form>
 </p>
