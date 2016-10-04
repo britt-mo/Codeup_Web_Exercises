@@ -1,0 +1,13 @@
+.fancy-header {
+    color: blue;
+    text-decoration: underline;
+}
+
+input {
+    border: 3px solid salmon;
+}
+
+#title {
+    font-size: 50px;
+    font-family: Helvetica;
+}

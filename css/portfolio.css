@@ -1,0 +1,45 @@
+body {
+    font-family: 'Trocchi', serif;
+    background-color: lavender;
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-image: url("../images/contemporary_china_2.png");
+}
+
+
+
+.portfolio-item {
+    margin-bottom: 25px;
+}
+
+footer {
+    margin: 30px 0;
+}
+
+.img-rounded {
+    border-radius: 15px 50px 30px;
+    -moz-box-shadow: 0 0 5px 5px #888;
+    -webkit-box-shadow: 0 0 5px 5px#888;
+    box-shadow: 0 0 5px 5px #888;
+
+}
+
+
+#socialicons {
+    text-align: center;
+    text-shadow: none;
+}
+#socialicons .icon{
+    background: MAIN_COLOR;
+    display: inline-block;
+    color: #58b068;
+    font-size: 30px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0px 5px 8px;
+}
+#socialicons .icon:hover{
+    background: HOVER_COLOR;
+}

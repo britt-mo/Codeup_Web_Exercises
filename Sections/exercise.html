@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Please Sign Up</h1>
+<form method="POST" action="http://requestb.in/10fdssl1">
+    <label for="username">Username</label>
+    <input id="username" type="text" name="username">
+    <br>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="text">
+    <br>
+
+    <label for="password">password</label>
+    <input id="password" name="password" type="password" name="password">
+    <br>
+
+    <label for="confirm_password">confirm password</label>
+    <input id="confirm_password" type="text" name="confirm_password">
+    <br>
+
+
+    <h2>Filing Status</h2>
+
+    <label for="">
+        <input type="radio" name="filing_status" value="single">
+        Single
+    </label>
+    <br>
+
+    <label for="">
+        <input type="radio" name="filing_status" value="married_joint">
+        Married Filing Jointly
+    </label>
+    <br>
+
+    <label for="">
+        <input type="radio" name="filing_status" value="married_separate">
+        Married Filing Separately
+    </label>
+    <br>
+
+    <label for="">
+        <input type="radio" name="filing_status" value="hoh">
+        Head of Household
+    </label>
+    <br>
+
+    <h2>This past year I was (check all that apply)</h2>
+
+    <label>
+        <input type="checkbox" id="os1" name="os[]" value="self_employed">
+        Self - Employed
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" id="os2" name="os[]" value="small_business">
+        Employed by a small business (< 50 employees)
+    </label>
+    <br>
+
+    <label>
+        <input type="checkbox" id= "os3" name="os[]" value="large_business">
+        Employed by a large business (> 50 employees)
+    </label>
+    <br>
+
+    <h2>What kind of phone do you have</h2>
+
+    <label for="phonetype" id= "phonetype" name="phonetype">Select Phone Type:</label>
+        <select id="phonetype" name="phonetype">
+        <option>Android</option>
+        <option>iPhone</option>
+        <option>Windows</option>
+        <option>other</option>
+        </select>
+    </label>
+
+    <hr>
+
+    <label for="newsletter">Sign Me Up For The Newsletter
+        <input type="checkbox" name="newsletter" id="newsletter" value="yes" checked>
+    </label>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+
+
+</body>
+</html>
+

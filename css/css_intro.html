@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Practice</title>
+    <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+<h2 id="title" class="fancy-header">User Login</h2>
+<form method="POST" action="http://requestb.in/yczpbuyd">
+    <p>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" autofocus>
+    </p>
+    <p>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+</form>
+
+<h2 id="title" class="fancy-header">Compose an Email</h2>
+
+<form method="POST" action="http://requestb.in/yczpbuyd">
+    <p>
+        <label for="username">To:</label>
+        <input type="text" id="first_name" name="first_name" value="">
+    </p>
+    <p>
+        <label for="username">From:</label>
+        <input type="text" id="first_name" name="first_name" value="">
+    </p>
+    <p>
+        <label for="username">Subject:</label>
+        <input type="text" id="subject" name="subject" value="">
+    </p>
+
+
+    <textarea id="email_body" name="email_body" rows="5" cols="40">Compose Message Here</textarea>
+    </p>
+    <p>
+        <button type="submit">Send Email</button>
+    </p>
+</form>
+<p>
+    <input type="checkbox" id="save_email" name="save_email" value="yes" checked>
+    <label for="save_email">Save a copy of this email</label>
+</p>

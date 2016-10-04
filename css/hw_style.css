@@ -1,0 +1,46 @@
+h2 {
+    color: lightseagreen;
+}
+
+body {
+    background-image: url("../images/coyotesmall.jpg"), url("../images/contemporary_china_2.png");
+    background-repeat: no-repeat, repeat;
+    background-position: center, top;
+    background-attachment: fixed;
+    font-family: 'Slabo 27px', serif;
+}
+
+h1, h4{
+    text-align: center;
+    color: hotpink;
+}
+ul {
+    list-style: circle;
+}
+
+tr {
+    padding: 1px;
+}
+
+td {
+    padding: 1px;
+}
+
+a:link {
+    color: palevioletred;
+}
+
+
+a:visited {
+    color: gray;
+}
+
+
+a:hover {
+    color: hotpink;
+}
+
+
+a:active {
+    color: blue;
+}

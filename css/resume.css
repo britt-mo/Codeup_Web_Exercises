@@ -1,0 +1,45 @@
+
+
+body {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: none;
+    font-family: 'Trocchi', serif;
+    background-color: transparent;
+    text-shadow: 1px 1px #D3D3D3;
+    }
+
+
+
+.full {
+    background: url("../images/buzios.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    color: #CF5300;
+}
+
+
+#socialicons {
+    text-align: center;
+    text-shadow: none;
+}
+#socialicons .icon{
+    background: MAIN_COLOR;
+    display: inline-block;
+    color: #58b068;
+    font-size: 50px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 100px 10px 8px;
+}
+#socialicons .icon:hover{
+    background: HOVER_COLOR;
+}
