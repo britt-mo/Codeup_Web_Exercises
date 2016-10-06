@@ -1,0 +1,33 @@
+body {
+    font-family: 'Trebuchet MS',verdana sans-serif;
+    margin: 3px;
+    padding: 0px;
+    border: solid ghostwhite;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.container_1{
+    background-color: #999f8e;
+    width: 20%;
+    position: fixed;
+    text-align: center;
+    float: left;
+    list-style-type: none;
+}
+
+.container_2 {
+    width: 80%;
+    height: auto;
+    float: right;
+    background-color: #d2d8c7;
+    padding: -15px;
+}
+
+.body_text {
+    margin-left: 10px;
+    margin-right: 10px;
+}
