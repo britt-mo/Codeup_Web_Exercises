@@ -19,28 +19,28 @@
         <input type="button" class="btn btn-info numbers" value="7"  >
         <input type="button" class="btn btn-info numbers" value="8"  >
         <input type="button" class="btn btn-info numbers" value="9"  >
-        <input type="button" class="btn btn-info" value="+" onclick="setOperation('add')" />
+        <input type="button" class="btn btn-info" value="+" id="add">
     </div>
     <div class="calcRow" id="calcRow2">
         <input type="button" class="btn btn-info numbers" value="4" >
         <input type="button" class="btn btn-info numbers" value="5">
         <input type="button" class="btn btn-info numbers" value="6" >
-        <input type="button" class="btn btn-info" value="-" onclick="setOperation('subtract')" />
+        <input type="button" class="btn btn-info" value="-" id="subtract">
     </div>
     <div class="calcRow" id="calcRow3">
         <input type="button" class="btn btn-info numbers" value="1" >
         <input type="button" class="btn btn-info numbers" value="2" >
         <input type="button" class="btn btn-info numbers" value="3" >
-        <input type="button" class="btn btn-info" value="x" onclick="setOperation('multiply')" />
+        <input type="button" class="btn btn-info" value="x" id="multiply">
     </div>
     <div class="calcRow" id="calcRow4">
-        <input type="button" class="btn btn-info" value="." onclick="insertDecimal('.')" />
+        <input type="button" class="btn btn-info" value="." id="decimal">
         <input type="button" class="btn btn-info numbers" value="0" >
-        <input type="button" class="btn btn-info" value="/" onclick="setOperation('divide')" />
-        <input type="button" class="btn btn-info" value="=" onclick="calculate()" />
+        <input type="button" class="btn btn-info" value="/" id="divide">
+        <input type="button" class="btn btn-info" value="=" id="evaluate">
     </div>
     <div class="calcRow" id="calcRow5">
-        <input type="button" class="btn btn-info" value="C" onclick="clearDisplay()" />
+        <input type="button" class="btn btn-info" value="C" id="clear">
     </div>
     </div>
     </div>

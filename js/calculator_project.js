@@ -6,7 +6,7 @@ var numberButtons = document.getElementsByClassName("numbers");
 var displayNum = "";
 var storedNum = "";
 var operation = 0;
-var queuedOperation = 0;
+var operations = 0;
 var calculationFinished = false;
 
 
@@ -17,13 +17,35 @@ for (var i = 0; i <numberButtons.length; i++){
 }
 
 
+document.getElementById("add").addEventListener("click", function(){
+    setOperation(this.value);
+});
+document.getElementById("subtract").addEventListener("click", function(){
+    setOperation(this.value);
+});
+document.getElementById("multiply").addEventListener("click", function(){
+    setOperation(this.value);
+});
+document.getElementById("divide").addEventListener("click", function(){
+    setOperation(this.value);
+});
+document.getElementById("clear").addEventListener("click", function(){
+    clearDisplay();
+});
+document.getElementById("decimal").addEventListener("click", function(){
+    insertDecimal(this.value);
+});
+document.getElementById("evaluate").addEventListener("click", function(){
+    calculate();
+});
+
 
 function clearDisplay() {
     var display = document.getElementById("display");
     displayNum = "";
     storedNum = "";
     operation = 0;
-    queuedOperation = 0;
+    operations = 0;
     display.value = displayNum;
 
 }
@@ -44,7 +66,6 @@ function insertDecimal(dec) {
             return;
         }
     display.value += dec;
-    console.log(dec);
 }
 
 
@@ -57,38 +78,36 @@ function setOperation(command) {
     var evalStored = eval(storedNum);
 
 
-    if (queuedOperation == 0) {
+    if (command == '+') {
+        operation = 1;
+    }
+    else if (command == '-') {
+        operation = 2;
+    }
+    if (command == 'x') {
+        operation = 3;
+    }
+    if (command == '/') {
+        operation = 4;
+    }
+
+    if (operations == 0) {
         storedNum = display.value;
     }
-    else if (queuedOperation == 1) {
+    else if (operations == 1) {
         storedNum = evalStored + evalDisplay;
     }
-    else if (queuedOperation == 2) {
+    else if (operations == 2) {
         storedNum = evalStored - evalDisplay;
     }
-    else if (queuedOperation == 3) {
+    else if (operations == 3) {
         storedNum = evalStored * evalDisplay;
     }
-    else if (queuedOperation == 4) {
+    else if (operations == 4) {
         storedNum = evalStored / evalDisplay;
     }
 
 
-    if (command == 'add') {
-        operation = 1;
-    }
-    else if (command == 'subtract') {
-        operation = 2;
-    }
-    if (command == 'multiply') {
-        operation = 3;
-    }
-    if (command == 'divide') {
-        operation = 4;
-    }
-
-
-    queuedOperation = operation;
     display.value = '';
 }
 
@@ -116,10 +135,9 @@ function calculate() {
     if (operation != 0)
         calculationFinished = true;
     operation = 0;
-    queuedOperation = 0;
+    operations = 0;
     displayNum = "";
     storedNum = "";
 }
-
 
 
