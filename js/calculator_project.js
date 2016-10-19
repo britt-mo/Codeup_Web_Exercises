@@ -4,7 +4,7 @@
 'use strict';
 var numberButtons = document.getElementsByClassName("numbers");
 var displayNum = "";
-var storedNum = "";
+var storedNum = 0;
 var operation = 0;
 var calculationFinished = false;
 
@@ -78,8 +78,8 @@ function setOperation(command) {
     var display = document.getElementById("display");
     displayNum = display.value;
 
-    var evalDisplay = eval(displayNum);
-    var evalStored = eval(storedNum);
+    var evalDisplay = Number(displayNum);
+    var evalStored = Number(storedNum);
 
 
     if (command == '+') {
@@ -102,8 +102,11 @@ function setOperation(command) {
     }
 
 
-    if (displayNum !== "" && storedNum !== "") {
-        storedNum = doOperation(evalStored, evalDisplay);
+    if (displayNum !== "" && storedNum !== 0) {
+        console.log("evalStored is " + evalStored);
+        console.log("evalDisplay is " + evalDisplay);
+        storedNum = doOperation(evalDisplay, evalStored);
+        console.log("storedNum is " + storedNum);
         display.value = '';
     } else {
         storedNum = display.value;
