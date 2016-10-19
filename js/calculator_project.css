@@ -1,6 +1,7 @@
 body
 {
     background-color: #e4b9b9;
+    font-family: monospace;
 }
 .calcForm {
     background-color: #798d8f;
@@ -38,22 +39,22 @@ body
 
 #calcRow1.calcRow {
     padding-top: 50px;
-    margin-left: 55px;
+    margin-left: 50px;
 }
 
 #calcRow2.calcRow {
     padding-top: 8px;
-    margin-left: 55px;
+    margin-left: 50px;
 }
 
 #calcRow3.calcRow {
     padding-top: 8px;
-    margin-left: 55px;
+    margin-left: 50px;
 }
 
 #calcRow4.calcRow {
     padding-top: 8px;
-    margin-left: 55px;
+    margin-left: 50px;
 }
 
 #calcRow5.calcRow {
