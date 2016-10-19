@@ -6,7 +6,6 @@ var numberButtons = document.getElementsByClassName("numbers");
 var displayNum = "";
 var storedNum = "";
 var operation = 0;
-var operations = 0;
 var calculationFinished = false;
 
 
@@ -51,7 +50,6 @@ function clearDisplay() {
     displayNum = "";
     storedNum = "";
     operation = 0;
-    operations = 0;
     display.value = displayNum;
 
 }
@@ -78,7 +76,7 @@ function insertDecimal(dec) {
 
 function setOperation(command) {
     var display = document.getElementById("display");
-        displayNum = display.value;
+    displayNum = display.value;
 
     var evalDisplay = eval(displayNum);
     var evalStored = eval(storedNum);
@@ -104,38 +102,13 @@ function setOperation(command) {
     }
 
 
-    if(displayNum !== "" && storedNum !== "") {
+    if (displayNum !== "" && storedNum !== "") {
         storedNum = doOperation(evalStored, evalDisplay);
         display.value = '';
     } else {
         storedNum = display.value;
         display.value = '';
     }
-
-    //if (operations == 0) {
-
-    //}
-    /*else if (operations == 1) {
-        storedNum = evalStored + evalDisplay;
-    }
-    else if (operations == 2) {
-        storedNum = evalStored - evalDisplay;
-    }
-    else if (operations == 3) {
-        storedNum = evalStored * evalDisplay;
-    }
-    else if (operations == 4) {
-        storedNum = evalStored / evalDisplay;
-    }
-    else if (operations == 5) {
-        displayNum = Math.sqrt(evalStored);
-    }
-    else if (operations == 6) {
-        displayNum = Math.pow(evalStored);
-    }
-*/
-
-    //display.value = '';
 }
 
 function calculate() {
@@ -144,22 +117,22 @@ function calculate() {
     var evalDisplay = eval(displayNum == "" ? storedNum : displayNum),
         evalStored = eval(storedNum);
 
-/*    if (displayNum == "") {
-        evalDisplay = storedNum;
-    } else {
-        evalDisplay = displayNum;
-    }*/
+    /*    if (displayNum == "") {
+     evalDisplay = storedNum;
+     } else {
+     evalDisplay = displayNum;
+     }*/
 
     displayNum = doOperation(evalDisplay, evalStored);
 
 
     display.value = displayNum;
-    if (operation != 0)
+    if (operation != 0) {
         calculationFinished = true;
-    operation = 0;
-    operations = 0;
-    displayNum = "";
-    storedNum = "";
+        operation = 0;
+        displayNum = "";
+        storedNum = "";
+    }
 }
 
 function doOperation(evalDisplay, evalStored) {
