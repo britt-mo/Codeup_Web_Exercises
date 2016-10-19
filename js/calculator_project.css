@@ -1,0 +1,62 @@
+body
+{
+    background-color: #e4b9b9;
+}
+.calcForm {
+    background-color: #798d8f;
+    height:350px;
+    width:250px;
+    border-radius:10px;
+    position:relative;
+    top:80px;
+    left:40%;
+    box-shadow: 10px 10px 5px #888888;
+
+}
+
+#container.allForm {
+    position: relative;
+
+}
+
+.displayDiv {
+    padding-top: 25px;
+    margin-left: 50px;
+}
+
+#display.calcDisplay {
+    position:relative;
+    left:2px;
+    top:2px;
+    height:35px;
+    width: 150px;
+    color:black;
+    background-color: #cfd9db;
+    font-size:21px;
+    text-align:left;
+}
+
+#calcRow1.calcRow {
+    padding-top: 50px;
+    margin-left: 55px;
+}
+
+#calcRow2.calcRow {
+    padding-top: 8px;
+    margin-left: 55px;
+}
+
+#calcRow3.calcRow {
+    padding-top: 8px;
+    margin-left: 55px;
+}
+
+#calcRow4.calcRow {
+    padding-top: 8px;
+    margin-left: 55px;
+}
+
+#calcRow5.calcRow {
+    padding-top: 8px;
+    margin-left: 110px;
+}

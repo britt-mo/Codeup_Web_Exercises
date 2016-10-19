@@ -1,0 +1,33 @@
+body {
+    background-image: url("../images/cubes.png");
+}
+
+
+
+.scoot {
+    padding: 0;
+}
+
+.select {
+    float: none;
+}
+
+.survey {
+    margin-left: 25px;
+}
+
+.img-responsive {
+    padding-top: 5em;
+}
+
+.toppings {
+    margin-top: 5em;
+}
+
+#nonmeats {
+    padding-top: 2em;
+}
+
+.sides {
+    float: right;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<script>
+
+    /**
+     * Created by brittmo on 10/13/16.
+     */
+
+    'use strict';
+
+    var books = [
+        {
+            "title": "Cien Años de Soledad",
+            "author": {
+                "firstName": "Gabriel ",
+                "lastName": "Garcia Marquez"
+            }
+        },
+        {
+            "title": "Catch-22",
+            "author": {
+                "firstName": "Joseph ",
+                "lastName": "Heller"
+            }
+        },
+        {
+            "title": "Robinson Crusoe",
+            "author": {
+                "firstName": "Daniel ",
+                "lastName": "Defoe"
+            }
+        },
+        {
+            "title": "The Vegetarian",
+            "author": {
+                "firstName": "Han ",
+                "lastName": "Kang"
+            }
+        },
+        {
+            "title": "IQ84",
+            "author": {
+                "firstName": "Haruki ",
+                "lastName": "Murakami"
+            }
+        },
+        {
+            "title": "Wise Blood",
+            "author": {
+                "firstName": "Flannery ",
+                "lastName": "O'Connor"
+            }
+
+
+        }];
+
+
+    function addBook() {
+        var book = {};
+        var author = {};
+        book.title = prompt("What book are you reading?");
+        author.firstName = prompt("First name of the author");
+        author.lastName = prompt("Last name of the author");
+        book.author = author;
+
+        book.push(book); //this was wrong
+    }
+
+    addBook();
+
+
+        books.forEach(function(element, index){
+
+            console.log("book #" + (index + 1));
+            console.log("The title is " + element.title);
+            console.log("Written by " + element.author.firstName + " " + element.author.lastName);
+            console.log("---");
+
+            });
+
+
+
+
+</script>
+</body>
+</html>

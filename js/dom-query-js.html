@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+
+
+<h1 id="main-header">Hello World!</h1>
+
+    <button id="btn1">Submit</button>
+
+
+<ul>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
+</ul>
+    <button id="btn2">Submit</button>
+
+
+<h2 id="sub-header">Hello Again.</h2>
+    <button id="btn3">Submit</button>
+
+
+<p class="sub-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+</p>
+    <button id="btn4">Submit</button>
+
+
+<script>
+    (function() {
+        "use strict";
+
+
+        var btn1Listener = function (event) {
+            var mainHeader = document.getElementById("main-header");
+            mainHeader.innerHTML = "Javascript is Cool";
+        };
+        var btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', btn1Listener, false);
+
+        var btn2Listener = function(event){
+            var listItems = document.getElementsByTagName("li");
+            for (var i = 0; i < listItems.length; i++) {
+                if (i % 2 == 0) {
+                    listItems[i].style.color = "grey";
+                }
+                listItems[0].style.color = "blue";
+            }
+
+        };
+
+        var btn2 = document.getElementById("btn2");
+        btn2.addEventListener('click', btn2Listener);
+
+
+
+        var btn3Listener = function (event) {
+            var subHeader = document.getElementById("sub-header");
+            subHeader.style.color = "blue";
+        };
+        var btn3 = document.getElementById("btn3");
+        btn3.addEventListener('click', btn3Listener);
+
+        var btn4Listener = function(event){
+            var subParagraph = document.getElementsByClassName("sub-paragraph");
+            subParagraph[0].innerText = "Mission Accomplished!";
+        };
+
+        var btn4 = document.getElementById("btn4");
+        btn4.addEventListener('click', btn4Listener);
+
+    })();
+
+            // TODO: Uncomment the next line and get the sub header element by id
+        // var subHeader = ;
+
+        // TODO: Set the text color of subHeader to blue
+
+        // TODO: Uncomment the next line and get all list items
+
+
+        // TODO: Set text color on every other list item to grey
+
+        // TODO: Set text color of li with dbid = 1 to blue
+        //must use for loop, if Li with dbid == 1, then change color to blue
+        //if(listItems[i]).getAttribute("data-dbid") == 1){
+       // listItems[i].style.color = "blue"
+        // }
+        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+
+
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        //subparagraphs seen as sarrays; can't do the same thing you did with the header.
+        //must choose the specific subparagraph you're trying to change, or else this
+        //will change all of the subparagraphs.
+</script>
+
+
+</body>
+</html>

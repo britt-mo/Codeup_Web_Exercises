@@ -3,10 +3,15 @@
  */
 "use strict";
 
-var condition = true;
-var grade = 70;
 
-if (grade >= 80 ) {
+var firstGrade = 70;
+var secondGrade = 80;
+var thirdGrade = 90;
+
+var average = (firstGrade + secondGrade + thirdGrade) / 3;
+
+
+if (average > 80 ) {
     console.log("You're awesome!")
 } else {
     console.log("You need to practice more")
@@ -23,19 +28,19 @@ var finalPriceG = george - ((george/100)*20);
 
 
 if (ryan >= 200){
-    console.log("Ryan spent at least $200; he will pay " + finalPriceR)
+    console.log("Ryan spent " + ryan + " he will pay " + finalPriceR)
 } else {
     console.log("Ryan will not get a discount; he will pay " + ryan)
 }
 
 if (cameron >= 200){
-    console.log("Cameron spent at least $200; he will pay " + finalPriceC)
+    console.log("Cameron spent " + cameron + " he will pay " + finalPriceC)
 }else {
-    console.log("cameron did not get a discount; he will pay " + cameron)
+    console.log("cameron did not get a discount" + " he will pay " + cameron)
 }
 
 if (george >= 200) {
-    console.log("George spent at least $200; he will pay " + finalPriceG)
+    console.log("George spent " + george + " he will pay " + finalPriceG)
 }else {
     console.log("George did not get a discount; he will pay " + george)
 }
@@ -43,11 +48,15 @@ if (george >= 200) {
 
 
 
+/*input */
 
 var flipACoin = Math.floor(Math.random()* 2);
 
-var flipACoin = 0 ? "Buy a car." : "Buy a house.";
+var message = "buy a house";
 
+if (flipACoin = 1)/*  - 1 converted to boolean is true. you could write it as (1 == flipACoin)*/ {
+    message = "Buy a car";
 
-
-
+}
+/* output*/
+console.log(message);
