@@ -38,6 +38,12 @@ document.getElementById("decimal").addEventListener("click", function(){
 document.getElementById("evaluate").addEventListener("click", function(){
     calculate();
 });
+document.getElementById("sqrt").addEventListener("click", function(){
+    setOperation(this.value);
+});
+document.getElementById("exponent").addEventListener("click", function(){
+    setOperation(this.value);
+});
 
 
 function clearDisplay() {
@@ -90,11 +96,26 @@ function setOperation(command) {
     if (command == '/') {
         operation = 4;
     }
-
-    if (operations == 0) {
-        storedNum = display.value;
+    if (command == '√') {
+        operation = 5;
     }
-    else if (operations == 1) {
+    if (command == '^') {
+        operation = 6;
+    }
+
+
+    if(displayNum !== "" && storedNum !== "") {
+        storedNum = doOperation(evalStored, evalDisplay);
+        display.value = '';
+    } else {
+        storedNum = display.value;
+        display.value = '';
+    }
+
+    //if (operations == 0) {
+
+    //}
+    /*else if (operations == 1) {
         storedNum = evalStored + evalDisplay;
     }
     else if (operations == 2) {
@@ -106,30 +127,31 @@ function setOperation(command) {
     else if (operations == 4) {
         storedNum = evalStored / evalDisplay;
     }
+    else if (operations == 5) {
+        displayNum = Math.sqrt(evalStored);
+    }
+    else if (operations == 6) {
+        displayNum = Math.pow(evalStored);
+    }
+*/
 
-
-    display.value = '';
+    //display.value = '';
 }
 
 function calculate() {
     var display = document.getElementById("display");
     displayNum = display.value;
-    var evalDisplay = eval(displayNum),
+    var evalDisplay = eval(displayNum == "" ? storedNum : displayNum),
         evalStored = eval(storedNum);
 
+/*    if (displayNum == "") {
+        evalDisplay = storedNum;
+    } else {
+        evalDisplay = displayNum;
+    }*/
 
-    if (operation == 1) {
-        displayNum = evalStored + evalDisplay;
-    }
-    else if (operation == 2) {
-        displayNum = evalStored - evalDisplay;
-    }
-    else if (operation == 3) {
-        displayNum = evalStored * evalDisplay;
-    }
-    else if (operation == 4) {
-        displayNum = evalStored / evalDisplay;
-    }
+    displayNum = doOperation(evalDisplay, evalStored);
+
 
     display.value = displayNum;
     if (operation != 0)
@@ -138,6 +160,27 @@ function calculate() {
     operations = 0;
     displayNum = "";
     storedNum = "";
+}
+
+function doOperation(evalDisplay, evalStored) {
+    if (operation == 1) {
+        return evalStored + evalDisplay;
+    }
+    else if (operation == 2) {
+        return evalStored - evalDisplay;
+    }
+    else if (operation == 3) {
+        return evalStored * evalDisplay;
+    }
+    else if (operation == 4) {
+        return evalStored / evalDisplay;
+    }
+    else if (operation == 5) {
+        return Math.sqrt(evalStored);
+    }
+    else if (operation == 6) {
+        return Math.pow(evalStored, evalDisplay);
+    }
 }
 
 
