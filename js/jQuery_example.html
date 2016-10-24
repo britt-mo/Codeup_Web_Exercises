@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"
+            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+<h1 id="title">Hello!</h1>
+
+<button id="other">select</button>
+
+<h3 id="listHeader">Favorite Books</h3>
+<ul class="first-list codeup">
+    <li class="books">
+        100 Years of Solitude
+    </li>
+    <li class="books">
+        Alice in Wonderland
+    </li>
+    <li class="books">
+        Catch-22
+    </li>
+    <li class="books">
+        The Elephant Vanishes
+    </li>
+</ul>
+
+<ul class="other-list codeup">
+    <li class="books">
+        100 Years of Solitude
+    </li>
+    <li class="books">
+        Alice in Wonderland
+    </li>
+    <li class="books">
+        Catch-22
+    </li>
+    <li class="books">
+        The Elephant Vanishes
+    </li>
+</ul>
+
+<ul class="other-list codeup">
+    <li class="books">
+        100 Years of Solitude
+    </li>
+    <li class="books">
+        Alice in Wonderland
+    </li>
+    <li class="books">
+        Catch-22
+    </li>
+    <li class="books">
+        The Elephant Vanishes
+    </li>
+</ul>
+
+<div id="text">
+    <p>
+        So Alice began telling them her adventures from the time when she first saw the White Rabbit. She was a little
+        nervous about it just at first, the two creatures got so close to her, one on each side, and opened their eyes
+        and mouths so VERY wide, but she gained courage as she went on. Her listeners were perfectly quiet till she got
+        to the part about her repeating 'YOU ARE OLD, FATHER WILLIAM,' to the Caterpillar, and the words all coming
+        different, and then the Mock Turtle drew a long breath, and said 'That's very curious.' 'It's all about as
+        curious as it can be,' said the Gryphon. 'It all came different!' the Mock Turtle repeated thoughtfully. 'I
+        should like to hear her try and repeat something now. Tell her to begin.' He looked at the Gryphon as if he
+        thought it had some kind of authority over Alice.
+    </p>
+</div>
+<button id="submit">select</button>
+
+<script>
+    //don't need the  $(document).ready(function(){    here at bottom
+    console.log(document.getElementById("title").innerHTML); //<--JS same as $("#title");
+
+    //output of the first method is going to be used as the input of the second one
+
+    $("#title").html();
+
+    /*
+     var contents = $('#listHeader');
+     alert(contents.html());
+     */
+
+    //class selector; css method
+    /*
+     $(".books").css("font-weight", "bold");
+     */
+    //this is same as in JS:
+    // var books = document.getElementsByClassName("items";
+    //for(var i = o; i< books.length; i++) {
+    // items[i].style.fontWeight = 'bold';
+    // }
+    /*
+     $(".books").each(function(){
+     */
+    // $(this).html()}); //"this" is the current element in the result set; no need for a parameter
+    /*
+     var $books = $(".first-list .books");
+
+     $books.css({
+     "font-weight": "bold",
+     "color": "blue",
+     "font-family": "monospaced"
+     });
+     */
+
+
+    var $codeup = $(".codeup");
+    $codeup.css('border', '1px solid red');
+
+
+    //element selector
+    $('li').css('font-size', '32px');
+
+    $("li, h1, p").css({
+        "background-color": "#FFC300"
+    });
+
+    var contents = $('h1');
+    alert(contents.html());
+
+    function onClick() {
+        alert('you clicked me!')
+    }
+
+
+    $("#submit").click(onClick);
+    //$("#submit").click(onClick()) <--calling the function; will open automatically
+    var currentColor = "#FFC300";
+    $(function () {
+        $('h1').click(function () {
+            currentColor = (currentColor == "#FFC300" ? "red" : "#FFC300")
+            $(this).css('background', currentColor)
+        });
+    });
+
+
+        $('p').dblclick(function () {
+            $(this).css("font-size", "18px");
+        });
+
+        $('li').hover(
+                function() {
+                    $(this).css('background-color', 'red');
+                },
+                function() {
+                    $(this).css('background-color', '#FFC300');
+                }
+        );
+
+
+
+    //hover
+    /*
+     $("#other").hover(function(){
+     alert("my books")
+     }, function(){
+     alert('let the element')
+     })
+     */
+
+    /*
+     $('body').hover(function(){}, function(){
+     alert("don't leave my page")
+     })
+     */
+</script>
+
+
+</body>
+</html>
+

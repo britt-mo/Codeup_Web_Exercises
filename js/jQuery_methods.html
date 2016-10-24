@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Methods</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <h1 id="title">Hello</h1>
+
+    <table class="table">
+        <tr>
+            <th>Delete</th>
+            <th>Name</th>
+        </tr>
+        <tr class="danger">
+            <td>
+                <input type="checkbox" checked>
+            </td>
+            <td>Luis</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>Zach</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>Ryan</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox">
+            </td>
+            <td>Otto</td>
+        </tr>
+    </table>
+    <button id="delete" class="btn btn-danger">Delete</button>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+    console.log($('#title').html());//getter, accessor
+    $('#title').html("New Text"); //setter, mutator
+
+
+    $("#delete").on("click", function(event){
+        event.preventDefault();
+        $("tbody").children(".danger").addClass("hidden");
+    });
+
+
+    $('input[type=checkbox]').on('click', function() {
+        $(this).parent().parent().toggleClass("danger");
+    });
+
+       /* same as using this if/else statement
+        if($(this).is(":checked")){
+            $("this").parent().parent().addClass("danger");
+        }else {
+            $("this").parent().parent().removeClass("danger");
+        }
+
+    })
+    */
+    $('tr').first().addClass("info");
+       $('tr').each(function(index, element){
+           //console.log($(element).html());
+           //console.log(index);
+           if(index % 2 == 0){
+               $(element).addClass("active");
+           }
+       });
+
+</script>
+</body>
+</html>

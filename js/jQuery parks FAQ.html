@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parks FAQ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+
+    .invisible {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"
+        integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<div class="container">
+<h1 id="title">Frequently Asked Questions about Zion National Park</h1>
+<dl>
+    <dt>
+        <a href="#">Can I drive my private vehicle into Zion Canyon?
+            </a>
+    </dt>
+    <dd class="invisible">From April to October access into the canyon is by free shuttle bus only. Private vehicles are allowed to access the canyon from November to mid March.</dd>
+</dl>
+<dl>
+    <dt>
+        <a href="#">Can I bicycle into Zion Canyon?
+    </a></dt>
+    <dd class="invisible">Bicycles are allowed on the 7-mile Zion Canyon Scenic Drive. Due to safety concerns cyclists are required to pull over and stop when approached from behind by a shuttle bus, and NEVER PASS A SHUTTLE BUS.</dd>
+</dl>
+<dl>
+    <dt>
+        <a href="#">
+            What is a red permit? Do I need one?
+    </a>
+    </dt>
+    <dd class="invisible">
+            Red permits are issued for overnight guests of the Zion Lodge. They are required to park in the lodge parking lot.
+    </dd>
+</dl>
+<dl>
+    <dt>
+        <a href="#">
+            Can commercial buses enter Zion Canyon?
+    </a>
+    </dt>
+    <dd class="invisible">Commercial tour buses can only drive directly to the Lodge if they are using Lodge facilities. Commercial buses are not allowed to drive anywhere else in the canyon from April through October. Commerical buses are to park in designated areas only - NOT in the shuttle stops.
+    </dd>
+</dl>
+<dl>
+    <dt>
+        <a href="#">
+            Are food services available in Zion Canyon?
+    </a>
+    </dt>
+    <dd class="invisible">Zion Lodge operates a restaurant year round and a snack bar from April through October.
+    </dd>
+</dl>
+<dl>
+    <dt>
+        <a href="#">
+            Is there any camping in Zion Canyon?
+    </a>
+    </dt>
+    <dd class="invisible">No. Closest camping is available in Watchman and South campgrounds, located near the south entrance.
+    </dd>
+</dl>
+<dl>
+    <dt>
+        <a href="#">
+            Where can I go swimming in the canyon?
+    </a>
+    </dt>
+    <dd class="invisible">Anywhere in the Virgin River. Tubing is not allowed within the park, but may be done in Springdale. Swimming is not allowed in the Emerald Pools.
+    </dd>
+</dl>
+<dl>
+    <dt>
+        <a href="#">
+            How often do rock falls occur in the park & does anyone ever get hurt?
+    </a>
+    </dt>
+    <dd class="invisible">Rockfalls are very common in Zion. No visitor has ever been killed by a rock fall in the history of Zion National Park.</dd>
+</dl>
+<dl>
+    <dt>
+        <a href="#">
+            Can I bring my firearm?
+    </a>
+    </dt>
+    <dd class="invisible">People who can legally possess firearms under applicable federal, state, and local laws, can legally possess firearms in Zion National Park and must follow all state and federal laws. Discharging firearms or hunting within the park is prohibited. Firearms are prohibited in park facilities.
+    </dd>
+</dl>
+<dl>
+    <dt>
+        <a href="#">
+            Can I bring my dog?
+    </a>
+    </dt>
+    <dd class="invisible">Pets are not allowed on trails (with the exception of the Pa'rus Trail) or in the wilderness, with the exception of service animals. For more information, visit our "Pets" tab.
+    </dd>
+</dl>
+</div>
+
+<div class="container">
+    <h3>Yosemite</h3>
+    <ul>
+        <li>
+            <a href="#">
+                Half Dome and El Capitan rise from the park's centerpiece, the glacier-carved Yosemite Valley, and from its vertical walls drop Yosemite Falls, North America's tallest waterfall
+            </a></li>
+        <li>
+            <a href="#">
+                Three giant sequoia groves, along with a pristine wilderness in the heart of the Sierra Nevada, are home to an abundance of rare plant and animal species
+        </a></li>
+        <li>
+            <a href="#">
+                Features towering granite cliffs, dramatic waterfalls, and old-growth forests at a unique intersection of geology and hydrology
+            </a></li>
+    </ul>
+    <h3>Big Bend</h3>
+    <ul>
+        <li>
+            <a href="#">
+                Named for the prominent bend in the Rio Grande along the US–Mexico border
+        </a></li>
+        <li>
+            <a href="#">
+                Its main attraction is backcountry recreation in the arid Chisos Mountains and in canyons along the river.
+            </a></li>
+        <li>
+            <a href="#">
+                Encompasses a large and remote part of the Chihuahuan Desert.
+            </a></li>
+    </ul>
+    <h3>Yellowstone</h3>
+    <ul>
+        <li>
+            <a href="#">
+                The yellow-hued Grand Canyon of the Yellowstone River has a number of scenic waterfalls, and four mountain ranges run through the park. More than 60 mammal species.
+            </a></li>
+        <li>
+            <a href="#">
+                Situated on the Yellowstone Caldera
+        </a></li>
+        <li>
+            <a href="#">
+                has an expansive network of geothermal areas including vividly colored hot springs, boiling mud pots, and regularly erupting geysers
+        </a></li>
+    </ul>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+    $('a').on('click', function(event) {
+        event.preventDefault();             //avoid link from leaving page
+      //  $("dd").toggleClass("invisible");
+       $(this).parent().next('dd').toggleClass('invisible');
+        });
+    //use of "next" element
+
+    //.after() and .prev() are like calling parent and children
+
+
+    $('ul').each(function(){
+        $(this).children().first().css("font-weight", "bold");
+    });
+
+    //other example:
+    /* bc element is not a jQuery object
+    $('ul').each(function(index, element){
+        var $element = $(element)
+        $element.children().first().css("font-weight", "bold");
+    })
+    */
+
+    $("li").on("click", function(event){
+        event.preventDefault();
+        $(this).parent().addClass("invisible");
+    });
+
+</script>
+
+
+
+
+</body>
+
+</html>
+
+

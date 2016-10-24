@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>binary exercise</title>
+</head>
+<body>
+<script>
+
+//    decimal / 2
+  //  save remainder, add all remainders
+
+
+
+function binaryToDecimal(numbers) {
+    var i;
+    var decimal = 0;
+    for (var i = 0; i < numbers.length(); i++) {
+        if (numbers.charAt(i) == '1') {
+            ten += Math.pow(2, numbers.length() - i - 1);
+        } else {
+            return decimal;
+        }
+    }
+
+    console.log(binaryToDecimal("10100011"));
+    console.log(binaryToDecimal("101101"));
+    console.log(binaryToDecimal("110100101010"));
+    console.log(binaryToDecimal("11101111"));
+    console.log(binaryToDecimal("01000010"));
+
+}
+</script>
+</body>
+</html>
