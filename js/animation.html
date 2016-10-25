@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animate</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #btn-animate {
+            margin: 15px;
+        }
+
+        #animate-box {
+            background-color: #000033;
+            height: 250px;
+            margin: 15px;
+            position: relative;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <button id="btn-move">Move It</button>
+    <button id="btn-scale">Scale It</button>
+    <button id="btn-hide">Hide It</button>
+    <button id="btn-show">Show It</button>
+    <button id="btn-all">Animate All</button>
+</p>
+
+<div id="animate-box"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        "use strict";
+        // TODO: "Move It" should move the box 100 pixels to the left
+
+        function animateBox(animationOptions) {
+            $("#animate-box").animate(animationOptions, 1000);
+        }
+
+            $('#btn-move').click(function () {
+                animateBox({left: "+=100px"});
+            });
+
+            $('#btn-scale').click(function () {
+                animateBox({width: "50%"});
+            });
+
+            $('#btn-hide').click(function () {
+                animateBox({opacity: 0});
+            });
+
+
+            $('#btn-show').click(function () {
+                animateBox({opacity: 1});
+            });
+
+
+
+        $('#btn-all').click(function () {
+            $("#animate-box").animate({
+                left: "+=100",
+                width: "+=50%"
+            }, 2000).animate({
+                opacity: 0
+            }, 2000).animate({
+                opacity: 1
+            }, 2000).animate({
+                width: "+=-50%"
+            }, 2000).animate({
+                left: "+=-100px"
+            });
+        });
+    });
+
+
+
+</script>
+</body>
+</html>
