@@ -1,16 +1,43 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Online Store</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/site.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
+<style>
+
+
+    h1 {
+        color: #0e6f5c;
+        font-weight: bold;
+        padding-left: 300px;
+    }
+
+    body {
+        font-family: 'Raleway', sans-serif;
+    }
+
+    th {
+        color: #0e6f5c;
+    }
+
+    table {
+        margin-left: 50px;
+
+    }
+
+    button {
+        margin-left: 50px;
+    }
+</style>
 <body>
+<div class="page-header">
+    <h1>My Tool Store</h1>
+</div>
 
-<h1>My Tool Store</h1>
-
-<table id="products">
+<table class="table table-bordered table-striped" id="products">
     <thead>
     <tr>
         <th>Title</th>
@@ -22,34 +49,38 @@
     <tbody id="insertProducts"></tbody>
 </table>
 
+<button id="refresh" class="btn btn-info">load items</button>
+
 <script src="jquery.js"></script>
 <script src="bootstrap.js"></script>
 <script>
-    (function() {
-        "use strict";
-        // TODO: Create an ajax GET request for /data/inventory.json
 
-        // TODO: Take the data from inventory.json and append it to the products table
-        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-        //             its contents and fields
-        //       HINT: You will want to target #insertProducts for your new HTML elements
-    })();
+    "use strict";
+    // TODO: Create an ajax GET request for /data/inventory.json
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+
+    $("button").on("click", function () {
 
         var request = $.get("data/inventory.json");
-        request.done(function(inventory){
-            var rows= "";
-            inventory.forEach(function(tool){
+        request.done(function (inventory) {
+            var rows = "";
+            inventory.forEach(function (tool) {
                 rows += "<tr><td>" + tool.title + "</td><td>" + tool.quantity + "</td><td>" + tool.price + "</td><td>" + tool.categories + '</td></tr>'
 
 
             });
             $("#insertProducts").html(rows);
         });
-        request.fail(function(error){
+        request.fail(function (error) {
             console.log(error);
         });
 
 
+    })
 
 
 </script>
