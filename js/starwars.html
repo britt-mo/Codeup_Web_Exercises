@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+</head>
+<body>
+
+<nav>
+    <main class="container">
+        <h1>A long time ago, in a galaxy far, far away...</h1>
+    </main>
+</nav>
+<footer></footer>
+<script src="jquery.js"></script>
+<script src="bootstrap.js"></script>
+
+
+<script>
+    var requestURL = "https://swapi.co/api/people/2";
+
+    var jqXHR = $.get(function(response){
+       console.log(response);
+        getHomeWorld(response.homeWorld);
+    });
+    jqXHR.fail(function(error){
+        console.log(error);
+    })
+
+    function getHomeWorld(url){
+        $.get(URL).done(function(response){
+            console.log(response);
+        }).fail(function(error){
+            console.log(error);
+        })
+    }
+
+</script>
+</body>
+</html>

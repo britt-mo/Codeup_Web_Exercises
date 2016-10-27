@@ -1,0 +1,13 @@
+h1 {
+    margin-left: 50px;
+}
+
+body {
+    font-family: 'Bree Serif', serif;
+    background: url("../images/weirdpic.png");
+}
+
+#categories {
+    margin-right: 10px;
+}
+

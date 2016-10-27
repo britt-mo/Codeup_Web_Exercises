@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SA Weather</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <style type="text/css">
+        body {
+            background: url("../images/gray.png");
+            color: floralwhite;
+            font-family: 'Abril Fatface', cursive;
+        }
+        .eachForecast {
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            background-color: black;
+        }
+
+
+        </style>
+</head>
+<body>
+<div id="weatherPanel" class="container img-rounded">
+    <h1 class="title">Weather Forecast</h1>
+    <h4>San Antonio</h4>
+    <div class="img-rounded" id="showWeather"></div>
+
+</div>
+<script src="jquery.js"></script>
+<script src="bootstrap.js"></script>
+
+
+<script>
+
+
+    var weatherData = $.get("http://api.openweathermap.org/data/2.5/forecast/daily?", {
+
+        APPID: "caf4e45194d83333d8ce8c45d8e286de",
+        lat: 29.423017,
+        lon: -98.48527,
+        cnt: 3,
+        units: "imperial"
+    }).done(function (data) {
+        var display = "";
+        console.log(data);
+        data.list.forEach(function (weatherInfo) {
+            display += "<div class='eachForecast img-rounded col-lg-3'><p>"
+                    +"<img src='http://openweathermap.org/img/w/" + weatherInfo.weather[0].icon + ".png'>"
+                    + "<p></p>"
+                    + weatherInfo.weather[0].description + "<p>"
+                    + weatherInfo.temp.max + "/"
+                    + weatherInfo.temp.min + "</p><p>"
+                    + "Humidity: "
+                    + weatherInfo.humidity + "</p><p>"
+                    + "Pressure: "
+                    + weatherInfo.pressure + "</p></div>";
+        });
+
+
+        $("#showWeather").html(display);
+
+    });
+
+    weatherData.fail(function (error) {
+        console.log(error);
+    });
+
+    var key = "AIzaSyCemIJyY_MM3gRV_yCH2KTMlLoEXl8HLYM";
+
+
+
+
+
+</script>
+</body>
+</html>

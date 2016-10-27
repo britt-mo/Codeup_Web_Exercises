@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="blog.css">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+</head>
+<body>
+<h1>My Blog</h1>
+<div class="container">
+<table id="posts">
+</table>
+</div>
+<script src="jquery.js"></script>
+<script src="bootstrap.js"></script>
+
+<script>
+    var request = $.get("data/blog.json");
+    request.done(function (passages) {
+        var rows = "";
+        passages.forEach(function (details) {
+            rows += "<tr><td class='title'><h3 class='title'>"
+                    + details.title + "</h3><p><h5>"
+                    + details.date + "</h5></p><p id='categories'>"
+                    + details.categories + "</p></td><td id='content'>"
+                    + details.content + "</td><tr>"
+    console.log(details);
+
+        });
+        $("#posts").html(rows);
+    });
+    request.fail(function (error) {
+        console.log(error);
+    });
+
+
+</script>
+</body>
+</html>
