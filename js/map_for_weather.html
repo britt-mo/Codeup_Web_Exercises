@@ -1,54 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
+    <meta charset="UTF-8">
+    <title>SA Weather</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <style type="text/css">
+        body {
+            background: url("../images/gray.png");
+            color: floralwhite;
+            font-family: 'Abril Fatface', cursive;
+        }
+
+        .eachForecast {
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 10px;
+            background-color: black;
+        }
+
+        #latlongbtn {
+            margin-top: 10px;
+        }
         #map {
             height: 100%;
+            color: black;
         }
         /* Optional: Makes the sample page fill the window. */
         html, body {
-            height: 100%;
+            height: 70%;
+            width: 80%;
             margin: 0;
             padding: 0;
         }
+
     </style>
 </head>
 <body>
-<div id="map"></div>
+<div id="weatherPanel" class="container img-rounded">
+    <h1 class="title">Weather Forecast</h1>
+    <h4>San Antonio</h4>
+    <div class="img-rounded" id="showWeather"></div>
+
+</div>
+<div id="map" class="container img-rounded"></div>
+
+
+
+<script src="jquery.js"></script>
+<script src="bootstrap.js"></script>
+
+
 <script>
+    "use strict";
+
+    getForecast(29.423017, -98.48527);
+
+
+
+    function getForecast(latitude, longitude) {
+        var weatherData = $.get("http://api.openweathermap.org/data/2.5/forecast/daily?", {
+
+            APPID: "caf4e45194d83333d8ce8c45d8e286de",
+            lat:latitude,
+            lon: longitude,
+            cnt: 5,
+            units: "imperial"
+        }).done(function (data) {
+            var display = "";
+            console.log(data);
+            data.list.forEach(function (weatherInfo) {
+                display += "<div class='eachForecast img-rounded col-lg-3'><p>"
+                        + "<img src='http://openweathermap.org/img/w/" + weatherInfo.weather[0].icon + ".png'>"
+                        + "<p></p>"
+                        + weatherInfo.weather[0].description + "<p>"
+                        + weatherInfo.temp.max + "/"
+                        + weatherInfo.temp.min + "</p><p>"
+                        + "Humidity: "
+                        + weatherInfo.humidity + "</p><p>"
+                        + "Pressure: "
+                        + weatherInfo.pressure + "</p></div>";
+            });
+
+
+            $("#showWeather").html(display);
+
+        });
+
+        weatherData.fail(function (error) {
+            console.log(error);
+        });
+    }
+
+
     var map;
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: 29.423017, lng: -98.48527},
             zoom: 5
         });
-        var contentString = "<p>" + "location" + "</p>";
+        var myLatlng = new google.maps.LatLng(29.423017, -98.48527);
 
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            draggable:true,
+            title:"Drag me!"
         });
-        infowindow.open(map, marker);
+
+
+        google.maps.event.addListener(map, 'click', function(event) {
+            marker.setPosition(event.latLng);
+            infoWindow.setContent(event.latLng.lat() + ", " + event.latLng.lng())
+        });
+
+        var infoWindow = new google.maps.InfoWindow({
+        });
+        infoWindow.open(map, marker);
+
+
+        google.maps.event.addListener(map, "click", function(event) {
+            getForecast(event.latLng.lat(), event.latLng.lng());
+        });
+
+
     }
-    var myLatlng = new google.maps.LatLng(29.423017, -98.48527);
-    var mapOptions = {
-        zoom: 4,
-        center: myLatlng
-    };
-    map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-    // Place a draggable marker on the map
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        draggable:true,
-        title:"Drag me!"
-    });
-
 
 
 
@@ -57,3 +133,7 @@
         async defer></script>
 </body>
 </html>
+
+
+
+

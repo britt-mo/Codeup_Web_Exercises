@@ -39,7 +39,7 @@
 <body>
 <div id="weatherPanel" class="container img-rounded">
     <h1 class="title">Weather Forecast</h1>
-    <h4>San Antonio</h4>
+    <h4 id="cityName">San Antonio</h4>
     <div class="img-rounded" id="showWeather"></div>
     <form class="form-inline">
         <div class="form-group">
@@ -75,7 +75,7 @@
             APPID: "caf4e45194d83333d8ce8c45d8e286de",
             lat:latitude,
             lon: longitude,
-            cnt: 3,
+            cnt: 5,
             units: "imperial"
         }).done(function (data) {
             var display = "";
@@ -93,7 +93,7 @@
                         + weatherInfo.pressure + "</p></div>";
             });
 
-
+            $("#cityName").html(data.city.name);
             $("#showWeather").html(display);
 
         });
@@ -129,7 +129,7 @@
 
         google.maps.event.addListener(map, 'click', function(event) {
             marker.setPosition(event.latLng);
-            infoWindow.setContent(event.latLng.lat() + ", " + event.latLng.lng())
+            infoWindow.setContent(event.latLng.lat() + ", " + event.latLng.lng());
         });
 
         var infoWindow = new google.maps.InfoWindow({
@@ -138,9 +138,10 @@
 
 
         google.maps.event.addListener(map, "click", function(event) {
-            // display the lat/lng in your form's lat/lng fields
             document.getElementById("latitude").value = event.latLng.lat();
             document.getElementById("longitude").value = event.latLng.lng();
+            getForecast(event.latLng.lat(), event.latLng.lng());
+
         });
 
 
