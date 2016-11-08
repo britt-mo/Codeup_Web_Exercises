@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>array work</title>
+</head>
+<body>
+
+<script>
+
+
+
+function sort(array){
+    var minIndex, nextElement;
+
+    for(var i = 0; i < array.length; i++) {
+        minIndex = i;
+        for(var  j = i + 1; j < array.length; j++){
+            if(array[j] < array[minIndex]){
+                minIndex = j;
+            }
+        }
+        nextElement = array[i];
+        array[i] = array[minIndex];
+        array[minIndex] = nextElement;
+    }
+    return array;
+}
+console.log(sort(['e', 'a', 'g', 'c', 'i', 'd', 'f', 'b', 'h']));
+</script>
+</body>
+</html>

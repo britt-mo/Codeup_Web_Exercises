@@ -39,7 +39,7 @@
 <body>
 <div id="weatherPanel" class="container img-rounded">
     <h1 class="title">Weather Forecast</h1>
-    <h4>San Antonio</h4>
+    <h4 id="cityName">San Antonio</h4>
     <div class="img-rounded" id="showWeather"></div>
 
 </div>
@@ -82,6 +82,7 @@
                         + weatherInfo.pressure + "</p></div>";
             });
 
+            $("#cityName").html(data.city.name);
 
             $("#showWeather").html(display);
 

@@ -1,0 +1,49 @@
+html, body {
+    height: 100%;
+}
+#introImage {
+    height: 100%;
+    background-image: url("../../images/cat_pic.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    background-color: black;
+    height: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: black;
+    position: fixed;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: floralwhite;
+}
+
+#header {
+    margin-top: 300px;
+    margin-left: 250px;
+}
+
+#userInstruct {
+    color: gray;
+}
