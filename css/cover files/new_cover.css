@@ -5,10 +5,10 @@ html, body {
     height: 100%;
     background-image: url("../../images/cat_pic.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+
 }
 
+/*
 nav {
     position: fixed;
     right: 0;
@@ -39,12 +39,12 @@ li a:hover {
 }
 
 #header {
-    /*margin-top: 300px;
-    margin-left: 250px;
-    float: left;*/
+    margin-top: 200px;
+    margin-left: 300px;
     position: absolute;
     top: 0;
 }
+*/
 
 #userInstruct {
     color: gray;
