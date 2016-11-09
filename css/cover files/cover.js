@@ -5,6 +5,22 @@
 
 console.log($("#mainDiv").hide())
 
-$("#introImage").fadeOut(5000,  function () {
+$("#introImage").animate({
+    opacity: 0.10,
+}, 3000, function() {
     $("#mainDiv").removeClass("hidden").fadeIn(3000);
+});
+
+$('#nav').affix({
+    offset: {
+        top: $('#nav').offset().top
+    }
+});
+
+$('#nav').affix({
+    offset: {
+        bottom: ($('footer').outerHeight(true) +
+        $('.application').outerHeight(true)) +
+        40
+    }
 });
