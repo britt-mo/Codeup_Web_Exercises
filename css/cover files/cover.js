@@ -1,29 +1,49 @@
-/**
- * Created by brittmo on 11/7/16.
+/*
+ * Created by brittmo on 11/7/16
  */
 'use strict';
 
 
-
-$(".main").onepage_scroll({
-    sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
-    easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
-                                     // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-    animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
-    pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
-    updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-    beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
-    afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
-    loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-    keyboard: true,                  // You can activate the keyboard controls
-    responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
-
-    direction: "vertical"
+$("#introImage").fadeOut(5000,  function () {
+    $("#mainDiv").removeClass("hidden").fadeIn(3000);
 });
 
+var cat = $("#cat").get(0);
 
-$("#introImage").animate({
- opacity: 0.10,
- }, 3000, function() {
- $("#mainDiv").removeClass("hidden").fadeIn(3000);
- });
+$("body").click(getClickPosition);
+
+function getClickPosition(e) {
+    var parentPosition = getPosition(e.currentTarget);
+    var xPosition = e.clientX - parentPosition.x - (cat.clientWidth / 2);
+    var yPosition = e.clientY - parentPosition.y - (cat.clientHeight / 2);
+
+    cat.style.left = xPosition + "px";
+    cat.style.top = yPosition + "px";
+}
+
+// Helper function to get an element's exact position
+function getPosition(el) {
+    var xPos = 0;
+    var yPos = 0;
+
+    while (el) {
+        if (el.tagName == "BODY") {
+            // deal with browser quirks with body/window/document and page scroll
+            var xScroll = el.scrollLeft || document.documentElement.scrollLeft;
+            var yScroll = el.scrollTop || document.documentElement.scrollTop;
+
+            xPos += (el.offsetLeft - xScroll + el.clientLeft);
+            yPos += (el.offsetTop - yScroll + el.clientTop);
+        } else {
+            // for all other non-BODY elements
+            xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+            yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+        }
+
+        el = el.offsetParent;
+    }
+    return {
+        x: xPos,
+        y: yPos
+    };
+}
