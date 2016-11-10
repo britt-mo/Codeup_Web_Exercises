@@ -8,7 +8,13 @@ $("#introImage").fadeOut(5000,  function () {
     $("#mainDiv").removeClass("hidden").fadeIn(3000);
 });
 
-var cat = $("#cat").get(0);
+
+$(document).mousemove(function(e){
+    $("#cat").stop().animate({left:e.pageX, top:e.pageY});
+});
+
+/*
+var cat = $("#cat").get(0); //#cat must be in position: relative
 
 $("body").click(getClickPosition);
 
@@ -19,6 +25,7 @@ function getClickPosition(e) {
 
     cat.style.left = xPosition + "px";
     cat.style.top = yPosition + "px";
+
 }
 
 // Helper function to get an element's exact position
@@ -47,3 +54,5 @@ function getPosition(el) {
         y: yPos
     };
 }
+
+*/

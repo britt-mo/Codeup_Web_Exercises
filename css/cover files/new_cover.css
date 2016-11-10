@@ -63,9 +63,11 @@ h1 {
 }
 
 #cat {
-    position: relative;
+    position: absolute;
     height: 4em;
     width: 4.4em;
 }
+
+
 
 
